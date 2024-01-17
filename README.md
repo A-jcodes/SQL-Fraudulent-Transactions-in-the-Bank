@@ -12,6 +12,19 @@ after the transaction ( newbalanceOrig and newbalanceDest).
 One particularly important aspect of this dataset is the presence of fraudulent transactions. The field 'isFraud' indicates whether the transaction was made by
 fraudulent agents. These agents aim to profit by taking control of customer accounts and transferring funds to another account before cashing out of the
 system. The isFlaggedFraud field is used to identify illegal attempts to transfer more than 200.000 in a single transaction.
+## Data Dictionary
+1.	step-maps a unit of time in the real world. In this case 1 step is 1 hour of time. Total steps 744 (30 days simulation).
+2.	type-CASH-IN, CASH-OUT, DEBIT, PAYMENT and TRANSFER.
+3.	amount-amount of the transaction in local currency.
+4.	nameOrig-customer who started the transaction
+5.	oldbalanceOrg-initial balance before the transaction
+6.	newbalanceOrig-new balance after the transaction
+7.	nameDest-customer who is the recipient of the transaction
+8.	oldbalanceDest-initial balance recipient before the transaction. Note that there is not information for customers that start with M (Merchants).
+9.	newbalanceDest-new balance recipient after the transaction. Note that there is not information for customers that start with M (Merchants).
+10.	isFraud-This is the transactions made by the fraudulent agents inside the simulation. In this specific dataset the fraudulent behaviorof the agents aims to profit by taking control or customers accounts and try to empty the funds by transferring to another account and then cashing out of the system.
+11.	isFlaggedFraud-The business model aims to control massive transfers from one account to another and flags illegal attempts. An illegal attempt in this dataset is an attempt to transfer more than 200.000 in a single transaction.
+
 
 ## Task
 The task is to explore the dataset, analyze the patterns and characteristics of legitimate and fraudulent transactions.
@@ -25,19 +38,11 @@ The task is to explore the dataset, analyze the patterns and characteristics of 
 7.	How effective is the bank in flagging fraud?
 8.	Who are the Top 20 Fraudsters
 
+## Action
+I meticulously designed and executed SQL queries to extract, transform, and load transactional data into a structured format conducive to fraud analysis. Employing various statistical and analytical techniques, I identified patterns indicative of potential fraud, such as unusual transaction amounts, irregular frequency, or suspicious geographic locations. My approach also involved the creation of advanced SQL scripts to flag and categorize transactions based on predefined criteria.
 
-## Data Dictionary
-1.	step-maps a unit of time in the real world. In this case 1 step is 1 hour of time. Total steps 744 (30 days simulation).
-2.	type-CASH-IN, CASH-OUT, DEBIT, PAYMENT and TRANSFER.
-3.	amount-amount of the transaction in local currency.
-4.	nameOrig-customer who started the transaction
-5.	oldbalanceOrg-initial balance before the transaction
-6.	newbalanceOrig-new balance after the transaction
-7.	nameDest-customer who is the recipient of the transaction
-8.	oldbalanceDest-initial balance recipient before the transaction. Note that there is not information for customers that start with M (Merchants).
-9.	newbalanceDest-new balance recipient after the transaction. Note that there is not information for customers that start with M (Merchants).
+## Result
+The implementation of the SQL-based fraud detection system yielded remarkable results. Not only did it significantly enhance the identification of fraudulent activities, but it also provided a valuable tool for proactive monitoring and prevention. The project showcased the effectiveness of SQL as a powerful tool for fraud detection within customer transactions, offering real-time insights that contribute to a more secure financial environment.
 
-
-10.	isFraud-This is the transactions made by the fraudulent agents inside the simulation. In this specific dataset the fraudulent behaviorof the agents aims to profit by taking control or customers accounts and try to empty the funds by transferring to another account and then cashing out of the system.
-11.	isFlaggedFraud-The business model aims to control massive transfers from one account to another and flags illegal attempts. An illegal attempt in this dataset is an attempt to transfer more than 200.000 in a single transaction.
+In conclusion, my fraud detection project using SQL successfully addressed the critical need for a proactive and efficient method to safeguard customer transactions, emphasizing the pivotal role of SQL in mitigating risks and ensuring the integrity of financial systems.
 
